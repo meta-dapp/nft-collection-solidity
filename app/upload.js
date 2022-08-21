@@ -17,7 +17,7 @@ uploadIPFS = async () => {
         const image = await pinata.pinFileToIPFS(readableStream)
         const metaData = generateMetaData(image.IpfsHash, i)
         console.log('Saving metadata...')
-        fs.writeFileSync(`./metadata/${i}`, JSON.stringify(metaData))
+        fs.writeFileSync(`./metadata/${i}.json`, JSON.stringify(metaData))
         await sleep(2000)
     }
 
